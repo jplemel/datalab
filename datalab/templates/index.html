@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>Coin Collector</title>
+
+    <meta name='viewport' content='width=device-width, initialscale=1'charset='UTF-8'>
+
+    <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+    <style>
+        @font-face { font-family: Roboto, sans-serif;
+      src: url('https://github.com/FontFaceKit/roboto/blob/gh-pages/fonts/Regular/Roboto-Regular.woff')
+    }
+    body {
+        font-family:Roboto, sans-serif;
+        background: #DDD;
+    }
+    h1 {
+        text-align: center;
+        background-color:#000000;
+        color:#FFFFFF;
+    }
+    h2 {
+        text-align:left;
+        margin:30px;
+    }
+    p {
+        font-size: 15px;
+        margin:30px;
+    }
+    address {
+        font-size:12px;
+    }
+    img {
+        margin:15px;
+    }
+    input {
+        font-family:Roboto, sans-serif;
+    }
+    form {
+        border: 1px;
+        margin: 15px;
+    }
+    img {
+        width: 150px;
+        height: 150px;
+        border: 1px solid #777;
+    }
+    </style>
+</head>
+<body>
+    <h1>COIN COLLECTION APP</h1>
+    <hr>
+    {% for coin in coins %}
+        <h2>{{ coin.state }}</h2><img src="{{ coin.img_url }}" alt="{{ coin.state }}">
+<!--- PREFORMATTED OUTPUT --->
+    <pre>
+    {{ coin.release_date }}
+    {{ coin.description }}
+
+    </pre>
+        {% if coin.possessed != True %}
+            <input type="checkbox" name="Found">
+        {% else %}
+            Got it!
+        {% endif %}
+    {% endfor %}
+</body>
+</html>
